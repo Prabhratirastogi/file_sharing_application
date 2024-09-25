@@ -1,0 +1,312 @@
+{
+	"info": {
+		"_postman_id": "b2876e92-0b7a-4a67-8e71-78047cee29fa",
+		"name": "FileSharing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24835937"
+	},
+	"item": [
+		{
+			"name": "User Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"lup\",\r\n  \"email\": \"prabhrati17@gmail.com\",\r\n  \"password\": \"123\",\r\n  \"user_type\": \"client_user\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/signup/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Link verification",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"piku\",\r\n  \"email\": \"23125prabhrati.2020@gmail.com\",\r\n  \"password\": \"123\",\r\n  \"user_type\": \"ops_user\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/verify-email/ab04ff35-273c-4bf7-9e22-4f0044b5c76f/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"verify-email",
+						"ab04ff35-273c-4bf7-9e22-4f0044b5c76f",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login_User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"email\": \"unnati@gmail.com\",\r\n  \"password\": \"123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3MjM4NTExLCJpYXQiOjE3MjcyMzc2MTEsImp0aSI6ImE2MjEwM2I5MTM2NTRmM2JiY2U3ZTE0YjY5NzI1YmRmIiwidXNlcl9pZCI6MTJ9.wpDi3Blh7D6v1fwai_0Vo2NxHpCuh3Nvjg_NprMgN1M\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/token/refresh/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "File Upload",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3MjQ0NTg3LCJpYXQiOjE3MjcyNDM2ODcsImp0aSI6IjlmMzBkMjM5NWFhMjRmZGE4YmVhZWYxNjFjYTE3Yjc4IiwidXNlcl9pZCI6MTN9.2rHRtPBIGIZGT46tNcg_XAFXaLxaFbi4ZD29LvMMGT0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Acer/Downloads/samplepptx.pptx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/upload/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"upload",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of uploaded Files",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3MjU2NjI1LCJpYXQiOjE3MjcyNDg2NjMsImp0aSI6Ijc5ZWRiZDgwZDY4MzQ3MTM5OGQ2MWQ5MmY0ZjhmMjAxIiwidXNlcl9pZCI6MTR9.wONqZ1vttE9MRveSVlip_1UpAWzfgVLyxWfZfwpMRzU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/files/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"files",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Download Link",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3MjU2NjI1LCJpYXQiOjE3MjcyNDg2NjMsImp0aSI6Ijc5ZWRiZDgwZDY4MzQ3MTM5OGQ2MWQ5MmY0ZjhmMjAxIiwidXNlcl9pZCI6MTR9.wONqZ1vttE9MRveSVlip_1UpAWzfgVLyxWfZfwpMRzU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/files/10/download/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"files",
+						"10",
+						"download",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test the secure link",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3MjU2NjI1LCJpYXQiOjE3MjcyNDg2NjMsImp0aSI6Ijc5ZWRiZDgwZDY4MzQ3MTM5OGQ2MWQ5MmY0ZjhmMjAxIiwidXNlcl9pZCI6MTR9.wONqZ1vttE9MRveSVlip_1UpAWzfgVLyxWfZfwpMRzU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI3MjU2NjI1LCJpYXQiOjE3MjcyNDg2NjMsImp0aSI6Ijc5ZWRiZDgwZDY4MzQ3MTM5OGQ2MWQ5MmY0ZjhmMjAxIiwidXNlcl9pZCI6MTR9.wONqZ1vttE9MRveSVlip_1UpAWzfgVLyxWfZfwpMRzU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/files/download/eyJmaWxlX3VybCI6ICIvdXBsb2Fkcy91cGxvYWRzL3NhbXBsZXBwdHhfbWtRWHdibi5wcHR4IiwgImV4cGlyeV90aW1lIjogMTcyNzI1NjAzOC4xMzQ4ODN9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"files",
+						"download",
+						"eyJmaWxlX3VybCI6ICIvdXBsb2Fkcy91cGxvYWRzL3NhbXBsZXBwdHhfbWtRWHdibi5wcHR4IiwgImV4cGlyeV90aW1lIjogMTcyNzI1NjAzOC4xMzQ4ODN9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

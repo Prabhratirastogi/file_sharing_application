@@ -1,0 +1,30 @@
+# Environment variable file
+.env
+
+# Django migrations
+*/migrations/*
+
+# Media files
+media/
+
+# Uploads folder
+uploads/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# SQLite database file
+db.sqlite3
+
+# Virtual environment
+env/
+
+# Other common files to ignore
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
