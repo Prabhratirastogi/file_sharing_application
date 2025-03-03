@@ -28,3 +28,7 @@ env/
 *.pyd
 *.db
 *.sqlite3
+
+
+*.FileSharing.postman_collection.json
+*.DEPLOYMEMT.md
